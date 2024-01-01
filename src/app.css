@@ -1,0 +1,64 @@
+@tailwind base;
+
+@layer base {
+    @font-face {
+        font-family: 'Nippo';
+        font-weight: normal;
+        src: local('Nippo-Medium'),local('Nippo Medium'),local('nippo-medium'), url('/fonts/Nippo-Medium.ttf') ;
+    }
+
+    @font-face {
+        font-family: 'Nippo';
+        font-weight: bold;
+        src: local('Nippo-Variable'),local('Nippo Variable'),local('nippo-variable'), url('/fonts/Nippo-Variable.ttf') ;
+    }
+
+
+    @font-face {
+        font-family: 'Satoshi';
+        font-style : bold;
+        src: local('Satoshi Bold'), url('/fonts/Satoshi-Bold.ttf') ;
+    }
+    
+
+    @font-face {
+        font-family: 'Satoshi';
+        font-weight: 300;
+        font-style: normal;
+        src: local('Satoshi Medium'), url('/fonts/Satoshi-Medium.ttf') ;
+    }
+
+    @font-face {
+        font-family: 'Satoshi';
+        font-weight: bold;
+        font-style: italic;
+        src: local('Satoshi BoldItalic'), url('/fonts/Satoshi-BoldItalic.ttf') format('ttf');
+    }
+
+
+    @font-face {
+        font-family: 'Satoshi';
+        font-style: italic;
+        src: local('Satoshi Italic'), url('/fonts/Satoshi-Italic.ttf') format('ttf');
+    }
+
+
+}
+
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply text-richBlackFogra;
+    @apply font-satoshi;
+    @apply bg-ghostWhite;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    @apply font-nippo;
+    @apply text-5xl;
+    @apply font-bold;
+}
