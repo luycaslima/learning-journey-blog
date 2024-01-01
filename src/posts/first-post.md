@@ -3,8 +3,7 @@ title: Hello and my objectives with this blog
 description: this is the introduction post.
 date: '2024-1-1'
 categories:
-  - talking
-  - test
+  - Talking
 published: true
 ---
 

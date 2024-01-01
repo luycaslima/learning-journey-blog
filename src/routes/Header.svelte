@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import { MagnifyingGlass, Sun} from 'phosphor-svelte'
 </script>
 
