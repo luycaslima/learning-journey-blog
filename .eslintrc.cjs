@@ -18,6 +18,10 @@ module.exports = {
 		es2017: true,
 		node: true
 	},
+	rules:{
+		"indent": [4, "tab"],
+		"no-tabs": 0,
+	},
 	overrides: [
 		{
 			files: ['*.svelte'],

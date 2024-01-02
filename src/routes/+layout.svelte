@@ -8,12 +8,11 @@
 </script>
 
 
-<div class="grid ">
+<div class="flex flex-col h-full">
     <Header />
     
-    <main class=" w-full mx-auto px-12">
-        <slot/>
-        <Footer />
+    <main class="mt-20 flex-1 w-4/6 m-auto py-4">
+        <slot />
     </main>
-
+    <Footer />
 </div>
