@@ -18,22 +18,22 @@
 
 <article>
     <!--Title-->
-    <hgroup>
-        <p>Published at {formatDate(post.date)}</p>
+    <hgroup class="mt-6">
+        <p class="text-coolBlue font-bold text-xl mb-2">Published at {formatDate(post.date)}</p>
         <h1>{post.title}</h1>
     </hgroup>
 
     <!-- Turn them into links <a href="/category/{category}>{category}</a> 
         so they point to a /category/[category] 
         page that shows the posts based on the name of the category?-->
-    <div>
-        {#each post.categories  as category}
+    <div class="flex my-2 gap-4 text-lg text-orangeRedCrayole">
+        {#each post.categories as category}
             <span>&num;{category}</span>
         {/each}
     </div>
 
     <!-- Post-->
-    <div class="">
+    <div class="mt-8 text-justify">
         <svelte:component this={data.content} />
     </div>
 

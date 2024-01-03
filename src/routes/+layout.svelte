@@ -11,7 +11,7 @@
 <div class="flex flex-col h-full">
     <Header />
     
-    <main class="mt-20 flex-1 w-4/6 m-auto py-4">
+    <main class="mt-20 flex-1 w-2/4 m-auto py-4">
         <slot />
     </main>
     <Footer />

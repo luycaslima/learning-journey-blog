@@ -64,9 +64,23 @@ body {
     padding: 0;
 }
 
+p {
+    @apply text-lg;
+}
+
+img {
+    //@apply mx-auto;
+    @apply h-full;
+}
+
 h1 {
     @apply font-nippo;
     @apply text-5xl;
+    @apply font-bold;
+}
+
+h2 {
+    @apply text-4xl;
     @apply font-bold;
 }
 

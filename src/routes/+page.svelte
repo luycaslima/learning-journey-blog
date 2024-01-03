@@ -2,9 +2,12 @@
     import type { PageData } from "./$types";
     //import * as config from '$lib/config'
     import { formatDate } from "$lib/utils";
+    import { ChevronsRight } from "lucide-svelte";
 
     export let data : PageData
     $: posts  = data.posts
+
+
 </script>
 
 
@@ -12,22 +15,44 @@
     <title>L22L</title>
 </svelte:head>
 
-<section class="h-full">
-    <ul class=" h-full flex flex-col justify-center gap-12">
-        {#each posts as post}
-            <li class=" max-w-3xl flex flex-col">
-                <a href={`/posts/${post.slug}`} class="text-4xl font-nippo font-bold transition-colors duration-200 hover:text-orangeRedCrayole">
+<section class="h-full flex gap-4 justify-between">
+    <ul class="h-full flex flex-col justify-center gap-8">
+        {#each posts as post, i}
+            <li class="mt-6  flex flex-col">
+                <a href={`/posts/${post.slug}`} class="max-w-max text-4xl font-nippo font-bold transition-colors duration-200 hover:text-orangeRedCrayole">
                     {post.title}
                 </a>
                 <p class="text-coolBlue font-bold text-lg">{formatDate(post.date)}</p>
                 <p class="mt-2 text-justify text-xl">{post.description}</p>
-                <!-- <div class="flex gap-2">
-                    {#each post.categories as  category}
-                     <span >{category}</span>   
-                    {/each}
-                </div> -->
+                 <div class="flex items-center justify-between ">
+                    <div class="flex gap-2">
+                        {#each post.categories as category,i}
+                         <span class="my-2 text-orangeRedCrayole ">
+                            {category}
+                            {#if i === 0 && i !== post.categories.length-1}
+                            ,
+                            {/if}
+                        </span>
+                        {/each}
+                    </div>
+                    <a class="mb-4 hover:bg-richBlackFogra px-2 max-w-max rounded-sm  transition-colors duration-200" href={`/posts/${post.slug}`}> 
+                        <ChevronsRight class='hover:text-ghostWhite text-richBlackFogra' size={32}/>
+                    </a>
+                </div>
             </li>
+
+            <!-- {#if i !== posts.length -1}
+                <hr class="bg-richBlackFogra h-[3px]">
+            {/if} -->
+        {:else}
+            <h2>No Posts for now! :(</h2>
         {/each}
+        
     </ul>
+    <!-- <aside class='sticky top-0 -right-16'>
+        <nav class="h-full w-full">
+            teste
+        </nav>
+    </aside> -->
     <!-- TODO put here the buttons to next pages -->
 </section>
