@@ -15,6 +15,7 @@
     <title>L22L</title>
 </svelte:head>
 
+
 <section class="h-full flex gap-4 justify-between">
     <ul class="h-full flex flex-col justify-center gap-8">
         {#each posts as post, i}
@@ -35,8 +36,8 @@
                         </span>
                         {/each}
                     </div>
-                    <a class="mb-4 hover:bg-richBlackFogra px-2 max-w-max rounded-sm  transition-colors duration-200" href={`/posts/${post.slug}`}> 
-                        <ChevronsRight class='hover:text-ghostWhite text-richBlackFogra' size={32}/>
+                    <a class="mb-4 hover:bg-richBlackFogra dark:hover:bg-aliceBlue px-2 max-w-max rounded-sm  transition-colors duration-200" href={`/posts/${post.slug}`}> 
+                        <ChevronsRight class='hover:text-ghostWhite text-richBlackFogra dark:hover:text-richBlackFogra dark:text-aliceBlue' size={32}/>
                     </a>
                 </div>
             </li>

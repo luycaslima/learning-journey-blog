@@ -1,5 +1,5 @@
 import type { Post } from "$lib/types"
-import { json } from "@sveltejs/kit"
+import { error, json } from "@sveltejs/kit"
 
 
 async function getPosts(){
@@ -18,7 +18,11 @@ async function getPosts(){
             post.published && posts.push(post)
         }
 
-    }   
+    }  
+
+    if(!paths){
+        throw error(500, 'Failed to load blog posts')
+    }
 
     //TODO Limit the number the posts per page 
     posts = posts.sort((first,second) => new Date(second.date).getTime() - new Date(first.date).getTime()) 

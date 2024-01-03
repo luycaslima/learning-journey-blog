@@ -59,9 +59,25 @@ body {
     @apply text-richBlackFogra;
     @apply font-satoshi;
     @apply bg-ghostWhite;
+    @apply dark:bg-newBlack;
+    @apply dark:text-aliceBlue;
+    @apply transition-colors;
+    
     height: 100vh;
     margin: 0;
     padding: 0;
+}
+
+pre {
+    @apply rounded-lg;
+    @apply my-4;
+    @apply mx-10;
+    @apply p-4;
+}
+
+code {
+
+    @apply inline-block;
 }
 
 p {
@@ -69,7 +85,7 @@ p {
 }
 
 img {
-    //@apply mx-auto;
+    @apply mx-auto;
     @apply h-full;
 }
 

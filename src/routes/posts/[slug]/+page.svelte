@@ -16,7 +16,7 @@
     <meta property="og:type" content={post.title} />
 </svelte:head>
 
-<article>
+<article class="h-full">
     <!--Title-->
     <hgroup class="mt-6">
         <p class="text-coolBlue font-bold text-xl mb-2">Published at {formatDate(post.date)}</p>
