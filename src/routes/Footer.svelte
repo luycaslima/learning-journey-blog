@@ -1,6 +1,10 @@
 <script lang='ts'>
 	import * as config from '$lib/config'
+  import { theme } from '$lib/theme';
   import { Github, Instagram, RssIcon } from 'lucide-svelte';
+
+  let isDark : boolean
+  $ : isDark = $theme === 'dark' ? true : false
 </script>
 
 <!-- Footer TODO make the text color weaker-->
@@ -17,7 +21,7 @@
                 <Instagram size='{28}' class='text-richBlackFogra dark:text-aliceBlue' />
             </a>
             <a target=”_blank”  href="https://github.com/luycaslima">
-                <Github size='{28}' class='text-richBlackFogra dark:text-aliceBlue' fill='#001021' />
+                <Github size='{28}' class='text-richBlackFogra dark:text-aliceBlue' fill={isDark ? '#080808' : '#001021'} />
             </a>
         </div>
     </div>

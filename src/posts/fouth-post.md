@@ -15,3 +15,8 @@ Media inside the **static** folder is served from `/`.
 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat eius, laudantium a, et voluptates, sint maiores illo accusamus totam rem officia enim! Quis aliquam neque numquam officiis quidem debitis ad?
 
 ![Svelte](/favicon.png)
+
+
+ - Teste
+ - Teste 2
+ - 34

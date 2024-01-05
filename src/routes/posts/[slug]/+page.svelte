@@ -1,14 +1,23 @@
 <script lang='ts'>
   import type { Post } from "$lib/types";
   import { formatDate } from "$lib/utils";
-    import type { PageData } from "./$types";
+  import type { PageData } from "./$types";
 
     export let data : PageData
-
+    let post : Post;
     $: post = data.meta satisfies Post
+
+    function removeSpaces(heading :string) : string{
+      const lowerCase = heading.toLowerCase()
+      const id = lowerCase.replace(/\s/g,'-')
+      return id
+    }
+
+    $: innerWidth = 0;
+    //console.log(innerWidth)
 </script>
 
-<!-- SEO -->
+<svelte:window bind:innerWidth />
 
 <svelte:head>
     <title>{post.title}</title>
@@ -16,25 +25,70 @@
     <meta property="og:type" content={post.title} />
 </svelte:head>
 
-<article class="h-full">
-    <!--Title-->
-    <hgroup class="mt-6">
-        <p class="text-coolBlue font-bold text-xl mb-2">Published at {formatDate(post.date)}</p>
-        <h1>{post.title}</h1>
-    </hgroup>
 
-    <!-- Turn them into links <a href="/category/{category}>{category}</a> 
+
+<div class="h-full post-grid relative gap-2 box-border ">
+    <!--Title-->
+    <header class="mt-6">
+      <hgroup>
+        <p class="text-coolBlue font-bold text-xl mb-2">Published at {formatDate(post.date)}</p>
+        <div class=" text-center flex items-center justify-center gap-8 my-4">      
+            <h1 class="">{post.title}</h1>
+            <hr class="flex-grow h-[3px]  bg-richBlackFogra dark:bg-aliceBlue">
+        </div>
+          <!--TODO Turn them into links <a href="/category/{category}>{category}</a> 
         so they point to a /category/[category] 
         page that shows the posts based on the name of the category?-->
-    <div class="flex my-2 gap-4 text-lg text-orangeRedCrayole">
-        {#each post.categories as category}
-            <span>&num;{category}</span>
-        {/each}
-    </div>
+        <div class="flex my-2 gap-4 text-lg text-orangeRedCrayole">
+          {#each post.categories as category}
+              <span>&num;{category}</span>
+          {/each}
+        </div>
+      </hgroup>
+    </header>
+  
+    <!--Summary-->
+    <!--TODO sort the headings by the which are children of it own categories-->
+    <aside class={innerWidth <1300 ? "toc" :"side" +" relative"}>
+      <nav class="sticky max-h-full w-fit top-6 ml-8">
+        <h3 class="font-bold text-2xl mb-4">Summary</h3>
+         <ul >
+            {#each post.headings as heading}
+                <li class=" transition-colors duration-200 hover:text-orangeRedCrayole list-decimal text-xl mb-2">
+                  <a class="link-underline link-underline-orange" href={'#'+removeSpaces(heading.title)}>
+                    {heading.title}
+                  </a>
+                </li>
+            {/each}
+         </ul>
+      </nav>
+    </aside>
 
-    <!-- Post-->
-    <div class="mt-8 text-justify">
-        <svelte:component this={data.content} />
-    </div>
+  <!-- Post-->
+  <main class="content mt-8 text-justify">
+    <svelte:component this={data.content} />
+  </main>
+     
+</div>
 
-</article>
+<style>
+
+  .side {
+    grid-area: side;
+  }
+  .toc{
+    grid-area:toc;
+  }
+
+  .content {
+    grid-area: content;
+  }
+
+  .post-grid{
+    display: grid;
+    grid-template: 
+    "header side"
+    "toc side"
+    "content side"/100% 0;
+  }
+</style>

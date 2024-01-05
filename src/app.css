@@ -68,6 +68,34 @@ body {
     padding: 0;
 }
 
+/* .post li {
+    @apply list-disc;
+    @apply mx-4;
+} */
+
+
+
+.post table {
+    @apply mx-auto;
+    @apply table-auto;
+    @apply border;
+
+}
+
+.post  thead, tbody ,th, tr {
+    @apply border;
+    @apply border-richBlackFogra;
+    @apply dark:border-aliceBlue;
+}
+
+.toc {
+    @apply sticky;
+}
+
+.toc li{
+    @apply list-decimal;
+}
+
 pre {
     @apply rounded-lg;
     @apply my-4;
@@ -86,7 +114,6 @@ p {
 
 img {
     @apply mx-auto;
-    @apply h-full;
 }
 
 h1 {
@@ -97,6 +124,11 @@ h1 {
 
 h2 {
     @apply text-4xl;
+    @apply font-bold;
+}
+
+h3 {
+    @apply text-3xl;
     @apply font-bold;
 }
 
