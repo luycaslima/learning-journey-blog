@@ -1,3 +1,7 @@
+<script lang="ts">
+//  import { onMount } from "svelte";
+
+</script>
 
 
 <svelte:head>
@@ -7,27 +11,31 @@
 
 <section class="h-full mt-6">
     <div class=" text-center flex items-center justify-center gap-8 my-4">
-        <div class="w-full"></div>
-        <h1 class="">ABOUT</h1>
-        <hr class="h-[3px] w-full bg-richBlackFogra dark:bg-aliceBlue">
+        <div class="flex-grow"></div>
+        <h1 class="">Who am I?</h1>
+        <hr class="h-[3px] flex-grow bg-richBlackFogra dark:bg-aliceBlue">
     </div>
-
-    <div class="flex gap-6 items-center justify-center" >
-        <!-- TODO Add a rotating cube here -->
-        <img src="/profile_pic.svg" class="max-h-[50%] rounded-full" loading="lazy" alt="my face">
-        <div>
-            <p>        
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam totam sed esse, 
-                tempora blanditiis numquam magnam sequi enim similique optio vero quibusdam nisi 
-                quam veniam corporis molestiae? Nihil, ipsam alias?
+    <div class="mx-auto mt-8 md:flex gap-6 items-center justify-center " >
+        <!-- TODO Add a rotating cube here in webgl -->
+        <img src="/profile_pic.svg" class="mx-0 rounded-full" loading="lazy" alt="my face">
+        <div class="flex-1 flex flex-col max-w-xl text-center my-5 md:my-0">
+            <h2 class="text-xl">        
+                Hello I'm Lucas
+            </h2>
+            <p>
+                I'm an Artist that became a Computer Scientist.
+            </p>
+            <p>I'm interested in Computer Graphics, Game development and Web development.</p>
+            <p>
+                I also love art, to draw and to paint.
             </p>
         </div>
     </div>
-
+<!-- 
     <div class=" text-center flex items-center justify-center gap-8 my-4">
-        <hr class="h-[3px] w-full bg-richBlackFogra dark:bg-aliceBlue">
-        <h1 class="">CONTACT</h1>
-        <div class="w-full"></div>
-    </div>
+        <hr class="h-[3px] flex-grow bg-richBlackFogra dark:bg-aliceBlue">
+        <h1 class="">Other Works</h1>
+        <div class="flex-grow"></div>
+    </div> -->
 
 </section>

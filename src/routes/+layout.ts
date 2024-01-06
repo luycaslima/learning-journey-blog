@@ -1,7 +1,7 @@
 import type { LayoutLoad } from "./$types";
 
 //Create html files at build time 
-//TODO check how to work with the WEBGL
+//For WebGl,always use OnMount
 export const prerender = true
 
 export const load : LayoutLoad = async ({url}) =>{

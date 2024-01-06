@@ -17,5 +17,4 @@
 <section class="h-full flex gap-4 justify-between">
     WIP
     <!-- <PostList posts={posts} /> -->
-    <!-- TODO put here the buttons to next pages -->
 </section>

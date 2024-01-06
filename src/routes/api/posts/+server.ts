@@ -6,15 +6,22 @@ async function getPosts(){
     let posts : Post[] = []
 
     //get files by vite
-    const paths  = import.meta.glob('/src/posts/*.md', {eager:true}) //get all files
+    const paths  = import.meta.glob('/src/posts/**/*.md', {eager:true}) //get all files
 
     for ( const path in paths){
         const file = paths[path] 
-        const slug = path.split('/').at(-1)?.replace('.md','') //take only the name of the post as slug
         
+        const newPaths = path.split('/')
+
+        const year = newPaths.at(-3)
+        const month = newPaths.at(-2)
+        const slug = newPaths.at(-1)?.replace('.md','') //take only the name of the post as slug
+        
+
         if(file && typeof file ==='object' && 'metadata' in file && slug){
             const metadata = file.metadata as Omit<Post,'slug'>
-            const post = {...metadata, slug} satisfies Post
+            const newSlug = year + '/' + month + '/' + slug
+            const post = {...metadata, slug: newSlug} satisfies Post
             post.published && posts.push(post)
         }
 

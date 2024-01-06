@@ -125,11 +125,21 @@ h1 {
 h2 {
     @apply text-4xl;
     @apply font-bold;
+    @apply my-4;
 }
 
 h3 {
     @apply text-3xl;
     @apply font-bold;
+    @apply my-4;
+}
+
+hr {
+    @apply h-[3px] bg-richBlackFogra dark:bg-aliceBlue mt-2;
+}
+
+canvas {
+    @apply mx-auto;
 }
 
 .link-underline {

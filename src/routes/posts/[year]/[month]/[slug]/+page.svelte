@@ -15,6 +15,13 @@
 
     $: innerWidth = 0;
     //console.log(innerWidth)
+    function handleAnchorClick (element : string ) {
+		const anchor = document.getElementById(element)
+		window.scrollTo({
+			top: anchor?.offsetTop,
+			behavior: 'smooth'
+	    })
+    }
 </script>
 
 <svelte:window bind:innerWidth />
@@ -29,10 +36,10 @@
 
 <div class="h-full post-grid relative gap-2 box-border ">
     <!--Title-->
-    <header class="mt-6">
+    <header class="mt-6 h-fit">
       <hgroup>
         <p class="text-coolBlue font-bold text-xl mb-2">Published at {formatDate(post.date)}</p>
-        <div class=" text-center flex items-center justify-center gap-8 my-4">      
+        <div class=" xl:text-center flex items-center justify-center gap-8 my-4">      
             <h1 class="">{post.title}</h1>
             <hr class="flex-grow h-[3px]  bg-richBlackFogra dark:bg-aliceBlue">
         </div>
@@ -49,23 +56,27 @@
   
     <!--Summary-->
     <!--TODO sort the headings by the which are children of it own categories-->
-    <aside class={innerWidth <1300 ? "toc" :"side" +" relative"}>
-      <nav class="sticky max-h-full w-fit top-6 ml-8">
-        <h3 class="font-bold text-2xl mb-4">Summary</h3>
-         <ul >
-            {#each post.headings as heading}
-                <li class=" transition-colors duration-200 hover:text-orangeRedCrayole list-decimal text-xl mb-2">
-                  <a class="link-underline link-underline-orange" href={'#'+removeSpaces(heading.title)}>
-                    {heading.title}
-                  </a>
-                </li>
-            {/each}
-         </ul>
-      </nav>
-    </aside>
-
+    {#if post.headings.length !== 0}
+      <aside class={innerWidth < 1300 ? "toc" :"side" +" relative"}>
+        <nav class="sticky max-h-full w-fit h-fit top-[12%] ml-8">
+          <h3 class="font-bold text-2xl mt-0 mb-4">Summary</h3>
+          <ul>
+              {#each post.headings as heading} <!--TODO insert a number after the id of heading to not repeat  and treat the nesting-->
+                  <li class=" transition-colors duration-200 hover:text-orangeRedCrayole list-decimal text-xl mb-2">
+                    <a class="link-underline link-underline-orange" 
+                      on:click|preventDefault={()=>{handleAnchorClick(removeSpaces(heading.title))}} 
+                      href={'#'+removeSpaces(heading.title)}>
+                      {heading.title}
+                    </a>
+                  </li>
+              {/each}
+          </ul>
+        </nav>
+      </aside>
+    {/if}
+    
   <!-- Post-->
-  <main class="content mt-8 text-justify">
+  <main class="content mt-2 text-justify">
     <svelte:component this={data.content} />
   </main>
      

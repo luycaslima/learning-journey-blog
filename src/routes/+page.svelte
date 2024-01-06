@@ -6,6 +6,7 @@
     export let data : PageData
     $: posts  = data.posts
 
+
 </script>
 
 

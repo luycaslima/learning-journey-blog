@@ -1,8 +1,11 @@
 <script lang="ts">
   import { theme } from '$lib/theme';
-  import {Search} from 'lucide-svelte'
+  //import {Search} from 'lucide-svelte'
   import Toggle from './Toggle.svelte';
+  import { page } from '$app/stores';
 
+    
+  //$: currentPath = $page.url.pathname  
   let isDark : boolean
   $ : isDark = $theme === 'dark' ? true : false
 </script>
@@ -22,10 +25,11 @@
         </a>
     
         <div class="flex flex-row items-center gap-6">
-            <div class="flex p-1 cursor-pointer">
+            <!--TODO make the search bar functional  -->
+            <!-- <div class="flex p-1 cursor-pointer">
                 <Search width='{3}'  size='{24}' class='text-richBlackFogra dark:text-aliceBlue' />
                 <input hidden class="rounded-md bg-richBlackFogra" type="search" value="" placeholder="Search...">
-            </div>
+            </div> -->
             <a href="/projects" class="font-bold text-lg transition-colors duration-200 hover:text-orangeRedCrayole">
                 <span class="link-underline link-underline-orange">
                     PROJECTS

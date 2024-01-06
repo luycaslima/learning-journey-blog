@@ -6,9 +6,9 @@
     export let posts: Post[]    
 </script>
 
-<ul class="h-full flex flex-col justify-center gap-8">
-    {#each posts as post, i}
-        <li class="mt-6  flex flex-col">
+<ul class="h-full flex flex-col justify-start gap-8 w-full mt-6">
+    {#each posts as post}
+        <li class="mt-6 flex flex-col">
             <a href={`/posts/${post.slug}`} class="max-w-max text-4xl font-nippo font-bold transition-colors duration-200 hover:text-orangeRedCrayole">
                 {post.title}
             </a>
@@ -30,12 +30,8 @@
                 </a>
             </div>
         </li>
-
-        <!-- {#if i !== posts.length -1}
-            <hr class="bg-richBlackFogra h-[3px]">
-        {/if} -->
     {:else}
-        <h2>No Posts for now! :( </h2>
+        <h1 class="mx-auto" >No Posts for now! :( </h1>
     {/each}
     <!-- <aside class='sticky top-0 -right-16'>
         <nav class="h-full w-full">
