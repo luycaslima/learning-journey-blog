@@ -88,18 +88,14 @@ body {
     @apply dark:border-aliceBlue;
 }
 
-.toc {
-    @apply sticky;
-}
 
 .toc li{
     @apply list-decimal;
 }
 
 pre {
-    @apply rounded-lg;
+    @apply rounded-lg md:mx-10;
     @apply my-4;
-    @apply mx-10;
     @apply p-4;
 }
 

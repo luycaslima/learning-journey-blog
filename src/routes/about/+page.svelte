@@ -9,10 +9,10 @@
 </svelte:head>
 
 
-<section class="h-full mt-6">
+<section class="h-full mt-20">
     <div class=" text-center flex items-center justify-center gap-8 my-4">
         <div class="flex-grow"></div>
-        <h1 class="">Who am I?</h1>
+        <h1 class="text-3xl md:text-5xl">Who am I?</h1>
         <hr class="h-[3px] flex-grow bg-richBlackFogra dark:bg-aliceBlue">
     </div>
     <div class="mx-auto mt-8 md:flex gap-6 items-center justify-center " >

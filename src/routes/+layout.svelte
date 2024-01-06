@@ -14,7 +14,7 @@
     {#key data.url}
         <main
             in:fade
-            class="mt-20 flex-1 max-w-[64rem] w-full m-auto p-4">
+            class="md:mt-20 flex-1 max-w-[64rem] w-full m-auto p-4">
             <slot />
         </main>
     {/key}

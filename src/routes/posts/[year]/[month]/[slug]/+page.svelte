@@ -34,7 +34,7 @@
 
 
 
-<div class="h-full post-grid relative gap-2 box-border ">
+<div class={ (innerWidth < 768 ? " " : "post-grid") +" h-full relative gap-2 box-border"}>
     <!--Title-->
     <header class="mt-6 h-fit">
       <hgroup>
@@ -57,8 +57,8 @@
     <!--Summary-->
     <!--TODO sort the headings by the which are children of it own categories-->
     {#if post.headings.length !== 0}
-      <aside class={innerWidth < 1300 ? "toc" :"side" +" relative"}>
-        <nav class="sticky max-h-full w-fit h-fit top-[12%] ml-8">
+      <aside class={ (innerWidth < 1300 ? "toc" :"side") +" relative"}>
+        <nav class="md:sticky max-h-full w-fit h-fit md:top-[12%] ml-8">
           <h3 class="font-bold text-2xl mt-0 mb-4">Summary</h3>
           <ul>
               {#each post.headings as heading} <!--TODO insert a number after the id of heading to not repeat  and treat the nesting-->

@@ -8,7 +8,7 @@
 
 </script>
 
-<button on:click={toggleTheme} aria-label="Toggle Theme" class="px-2">
+<button on:click={toggleTheme} aria-label="Toggle Theme" class="px-2 flex items-center">
     {#if $theme ==='dark'}
         <div in:fly={{ y:10 }}>
             <SunMedium class='text-richBlackFogra dark:text-aliceBlue' size='{24}' />

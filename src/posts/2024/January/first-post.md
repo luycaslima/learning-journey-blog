@@ -1,10 +1,11 @@
 ---
-title: Hello and my objectives with this blog
-description: this is the introduction post.
-date: '2024-1-1'
+title: An Introduction
+description: Just writing what are my objectives with this blog and who am I.
+date: '2024-1-5'
 categories:
   - Talking
-published: true
+published: false
+layout: default
 ---
 
 
