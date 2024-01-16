@@ -6,11 +6,12 @@
     export let data : PageData
     let post : Post;
     $: post = data.meta satisfies Post
-
+    
     function removeSpaces(heading :string) : string{
       const lowerCase = heading.toLowerCase()
       const id = lowerCase.replace(/\s/g,'-')
-      return id
+      const filterPunctuation = id.replace("?",'').replace(",","").replace("!","").replace(".","")
+      return filterPunctuation
     }
 
     $: innerWidth = 0;
@@ -34,7 +35,7 @@
 
 
 
-<div class={ (innerWidth < 768 ? " " : "post-grid") +" h-full relative gap-2 box-border"}>
+<div class={ (innerWidth < 768 ? " " : "post-grid") +" relative gap-2 box-border wrapper"}>
     <!--Title-->
     <header class="mt-6 h-fit">
       <hgroup>
@@ -75,14 +76,24 @@
       </aside>
     {/if}
     
+  
   <!-- Post-->
-  <main class="content mt-2 text-justify">
+  <main class="content mt-2 text-justify h-full">
     <svelte:component this={data.content} />
   </main>
      
 </div>
 
-<style>
+<style lang="postcss">
+  .wrapper :global(img){
+    @apply md:w-1/2;
+  }
+  .wrapper :global(p){
+    @apply my-4;
+  }
+  .wrapper :global(ul){
+    @apply list-disc ml-4 min-w-32;
+  }
 
   .side {
     grid-area: side;
