@@ -6,20 +6,20 @@
     export let posts: Post[]    
 </script>
 
-<ul class="h-full flex flex-col justify-start gap-8 w-full mt-6">
+<ul class="h-full flex flex-col justify-start w-full mt-6">
     {#each posts as post}
-        <li class="mt-6 flex flex-col">
-            <a href={`/posts/${post.slug}`} class="max-w-max text-4xl font-nippo font-bold transition-colors duration-200 hover:text-orangeRedCrayole">
+        <li class="mt-8 flex flex-col">
+            <a href={`/posts/${post.slug}`} class="max-w-max text-3xl md:text-4xl font-nippo font-bold transition-colors duration-200 hover:text-orangeRedCrayole">
                 {post.title}
             </a>
-            <p class="text-coolBlue font-bold text-lg">{formatDate(post.date)}</p>
-            <p class="mt-2 text-justify text-xl">{post.description}</p>
+            <p class="text-coolBlue font-bold text-md md:text-lg">{formatDate(post.date)}</p>
+            <p class="mt-2 text-justify text-lg md:text-xl">{post.description}</p>
              <div class="flex items-center justify-between ">
-                <div class="flex gap-2">
+                <div class="flex text-sm md:text-base gap-2">
                     {#each post.categories as category,i}
                      <span class="my-2 text-orangeRedCrayole ">
                         {category}
-                        {#if i === 0 && i !== post.categories.length-1}
+                        {#if i !== post.categories.length-1}
                         ,
                         {/if}
                     </span>

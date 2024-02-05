@@ -10,7 +10,7 @@
     function removeSpaces(heading :string) : string{
       const lowerCase = heading.toLowerCase()
       const id = lowerCase.replace(/\s/g,'-')
-      const filterPunctuation = id.replace("?",'').replace(",","").replace("!","").replace(".","")
+      const filterPunctuation = id.replace("?",'').replace(",","").replace("!","").replace(".","").replace('(',"").replace(')',"").replace("/","")
       return filterPunctuation
     }
 
@@ -31,15 +31,16 @@
     <title>{post.title}</title>
     <meta property="og:type" content="article" />
     <meta property="og:type" content={post.title} />
+    <meta property="og:type" content={post.categories.toString()} />
 </svelte:head>
 
 
 
 <div class={ (innerWidth < 768 ? " " : "post-grid") +" relative gap-2 box-border wrapper"}>
     <!--Title-->
-    <header class="mt-6 h-fit">
+    <header class="mt-12 md:mt-6 h-fit">
       <hgroup>
-        <p class="text-coolBlue font-bold text-xl mb-2">Published at {formatDate(post.date)}</p>
+        <span class="text-coolBlue font-bold text-xl mb-2">Published at {formatDate(post.date)}</span>
         <div class=" xl:text-center flex items-center justify-center gap-8 my-4">      
             <h1 class="">{post.title}</h1>
             <hr class="flex-grow h-[3px]  bg-richBlackFogra dark:bg-aliceBlue">
@@ -86,7 +87,7 @@
 
 <style lang="postcss">
   .wrapper :global(img){
-    @apply md:w-1/2;
+    @apply md:w-2/3;
   }
   .wrapper :global(p){
     @apply my-4;

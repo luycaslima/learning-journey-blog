@@ -1,4 +1,4 @@
-export type Categories = 'Talking' | 'Gamedev' | 'Webgl' | 'Opengl' | 'Computer Graphics' | 'Art'
+export type Categories = 'Talking' | 'Gamedev' | 'Webgl' | 'Opengl' | 'Raylib' | 'Computer Graphics' | 'Art' | 'CSharp'
 
 export type Heading = {
     level : number

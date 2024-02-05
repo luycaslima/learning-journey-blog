@@ -16,7 +16,7 @@ I thought of making videos, but usually, they take too much work, and I find tha
 
 I'm Lucas, I'm just an Artist that end up becoming a Computer Cientist. Most of the time, I end up studying multiple things out of curiosity, but at the end of the day I always come back to Computer Graphics or anything that involves Game developing in some way in my free time.
 
-![Pixel Art](/2024/January/idol_jade_background.gif)
+![Pixel Art](/2024/January/idol_jade.webp)
 
 
 ## So, what are my goals with this blog?
