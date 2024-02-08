@@ -1,7 +1,7 @@
 ---
-title: Nuns - Devlog 1 Entity Component System (ECS)
-description: Explanation and initial implementation of an ECS in C# for my Game. 
-date: '2024-2-1'
+title: ECS - Concept and Implementation in C#
+description: This post consists of an Explanation of what an Entity Component System is and how I implemented my own library for my game projects in C#. 
+date: '2024-2-7	'
 categories:
   - Gamedev
   - Raylib 
@@ -9,6 +9,8 @@ categories:
 published: false
 layout: default
 ---
+
+
 
 ## What is an Entity Component System?
 
@@ -18,7 +20,7 @@ layout: default
 - Component Manager
 - Entity Manager
 - Base System
-
+- How do I get the type of component and system
 
 
 

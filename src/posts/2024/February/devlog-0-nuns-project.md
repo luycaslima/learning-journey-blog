@@ -80,6 +80,6 @@ At this moment, I implemented a basic ECS (Entity Component System) generic enou
   - [X] Mockup
   - [ ] Dog Nun's Idle's Sprite 
 
-Next post I'm planning to explain how I implemented my Entity Component System (ECS).
+Next post I'm planning to explain what is it an ECS and how I implemented it.
 
-See you next post! 
+See you in the next post! 

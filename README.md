@@ -12,6 +12,12 @@ The objective of this blog is to document things that i'm developing or just lea
 - [ ] Search input
 - [ ] Math equations support (?)
 - [X] Test WEBGL in posts
+- [X] Mobile Support
+- [X] List Posts
+- [X] Post Page
+  - [X] Post Heading links
+  - [X] Image Lazy loading
+- [X] Dark Mode
 - [ ] Show Posts as a timeline by year and month (?)
 - [X] Import posts by folders per Year/Month
 - [ ] Categories menu links on home page
